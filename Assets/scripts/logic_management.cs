@@ -13,8 +13,7 @@ public class logic_management : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject pipeSpawner;
     public Button playAgainButton;
-    public GameObject logo;
-    public Button exitGameButton;
+    public Button goMainMenuButton;
     public AudioSource Bit;
     public AudioSource ded;
     public TextMeshProUGUI tauntText;
@@ -22,15 +21,12 @@ public class logic_management : MonoBehaviour
 
     void Start()
     {
-        exitGameButton.onClick.AddListener(QuitGame);
         startText.SetActive(true);
         scoreText.gameObject.SetActive(false);
         pipeSpawner.gameObject.SetActive(false);
         Bit.gameObject.SetActive(false);
         ded.gameObject.SetActive(false);
         tauntText.gameObject.SetActive(false);
-        exitGameButton.gameObject.SetActive(false);
-        logo.gameObject.SetActive(true);
     }
 
     [ContextMenu("Increase Score")]
@@ -46,15 +42,6 @@ public class logic_management : MonoBehaviour
         }
     }
 
-    public void QuitGame()
-    {
-#if UNITY_EDITOR
-    UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
-    }
-
 
     public void StartGame()
     {
@@ -62,7 +49,6 @@ public class logic_management : MonoBehaviour
         scoreText.gameObject.SetActive(true);
         gameStarted = true;
         pipeSpawner.gameObject.SetActive(true);
-        logo.gameObject.SetActive(false);
     }
 
     void ShowTauntText()
@@ -166,13 +152,17 @@ public class logic_management : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void goToMainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
-        playAgainButton.gameObject.SetActive(true);
-        exitGameButton.gameObject.SetActive(true);
         ded.gameObject.SetActive(true);
         ded.Play();
     }
+
 
 }
