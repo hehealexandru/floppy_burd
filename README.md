@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="floppy burd png/Artboard 1.png" alt="LOGO" width="500">
+  <img src="floppy burd png/Artboard 1.png" alt="LOGO" width="300" >
 </p>
 <p align="center">
   A Unity game inspired by Flappy Bird.
 </p>
-Welcome to the GitHub repository for **Floppy Burd**, a creative and addictive version of the classic game **Flappy Bird**. Passionately developed in **Unity** and meticulously programmed in **C#**, this game promises to provide hours of fun and challenges.
+Welcome to the GitHub repository for Floppy Burd, a creative and addictive version of the classic game Flappy Bird. Passionately developed in Unity and meticulously programmed in C#, this game promises to provide hours of fun and challenges.
 
 ## About the Game
 
